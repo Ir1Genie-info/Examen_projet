@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestion des Appartements</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .navbar-vertical {
+            height: 100vh;
+            position: fixed;
+            width: 250px;
+            top: 0;
+            left: 0;
+            background-color: #f8f9fa;
+            padding-top: 20px;
+        }
+        .container {
+            margin-left: 270px; /* Pour éviter que le contenu soit caché derrière la barre de navigation */
+            margin-top: 20px;
+        }
+        .card {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Barre de navigation verticale -->
+    <nav class="navbar navbar-light bg-light navbar-vertical">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Gestion des Appartements</a>
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">Accueil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Appartements</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Clients</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Réservations</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Profil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Déconnexion</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Contenu principal -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Appartements</h5>
+                        <p class="card-text">Gérez vos appartements, ajoutez de nouveaux appartements et mettez à jour les informations existantes.</p>
+                        <a href="#" class="btn btn-primary">Voir les Appartements</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Clients</h5>
+                        <p class="card-text">Gérez vos clients, ajoutez de nouveaux clients et mettez à jour les informations existantes.</p>
+                        <a href="#" class="btn btn-primary">Voir les Clients</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Réservations</h5>
+                        <p class="card-text">Gérez les réservations, ajoutez de nouvelles réservations et mettez à jour les informations existantes.</p>
+                        <a href="#" class="btn btn-primary">Voir les Réservations</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+</body>
+</html>
