@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Facture</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .invoice {
+            padding: 30px;
+        }
+        .invoice h2 {
+            margin-top: 0;
+        }
+        .invoice .table {
+            margin-bottom: 0;
+        }
+        .btn-print {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    {%for i in paiement %}
+    <div class="container mt-5">
+        <div class="invoice">
+            <div class="row">
+                <div class="col-12 text-center">
+                    <h2>Facture : {{i[10]}}</h2>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-6">
+                    <h5>De :</h5>
+                    <address>
+                        <strong>Appartement MKM</strong><br>
+                        123 Rue Kinshasa<br>
+                        Butembo,104 Butembo<br>
+                        Email: muykav@gmail.com
+                    </address>
+                </div>
+                <div class="col-6 text-right">
+                    <h5>À :</h5>
+                    <address>
+                        <strong>Client : {{i[7]}}</strong><br><br>
+                        <P>{{i[1]}}</P>
+                    </address>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                
+                                <th>Appartement</th>
+                                <th>Debut loyer</th>
+                                <th>Fin loyer</th>
+                                <th>Montant</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>{{i[6]}}</td>
+                                <td>{{i[2]}}</td>
+                                <td>{{i[3]}}</td>
+                                <td>{{i[9]}}$</td>
+                            </tr>
+                            <tr>
+                                <td colspan="3" class="text-right"><strong>Total</strong></td>
+                                <td>{{i[9]}}$</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-12 text-right">
+                    <button class="btn btn-primary btn-print" onclick="window.print()">Imprimer la Facture</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    {%endfor%}
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
