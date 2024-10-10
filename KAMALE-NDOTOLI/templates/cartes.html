@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <title> Portefeuille Électronique</title>
+</head>
+<div class="container">
+    <div class="row justify-content-center align-items-center min-vh-100">
+        <div class="col-md-4">
+            <h1 class="mt-5">Liste des Cartes de Paiement</h1>
+            <form method="POST" action="/cartes" class="needs-validation" novalidate>
+                <div class="form-group">
+                    <label for="utilisateur_id">ID Utilisateur</label>
+                    <input type="text" class="form-control" id="utilisateur_id" name="utilisateur_id" required>
+                    <div class="invalid-feedback">
+                        Veuillez entrer un ID utilisateur valide.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="numero_carte">Numéro de Carte</label>
+                    <input type="text" class="form-control" id="numero_carte" name="numero_carte" required>
+                    <div class="invalid-feedback">
+                        Veuillez entrer un numéro de carte valide.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="date_expiration">Date d'Expiration</label>
+                    <input type="text" class="form-control" id="date_expiration" name="date_expiration" required>
+                    <div class="invalid-feedback">
+                        Veuillez entrer une date d'expiration valide.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV</label>
+                    <input type="text" class="form-control" id="cvv" name="cvv" required>
+                    <div class="invalid-feedback">
+                        Veuillez entrer un CVV valide.
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="type_carte">Type de Carte</label>
+                    <input type="text" class="form-control" id="type_carte" name="type_carte" required>
+                    <div class="invalid-feedback">
+                        Veuillez entrer un type de carte valide.
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Ajouter</button>
+            </form>
+            <table class="table table-striped mt-3">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>ID Utilisateur</th>
+                        <th>Numéro de Carte</th>
+                        <th>Date d'Expiration</th>
+                        <th>CVV</th>
+                        <th>Type de Carte</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for carte in cartes %}
+                    <tr>
+                        <td>{{ carte.id }}</td>
+                        <td>{{ carte.utilisateur_id }}</td>
+                        <td>{{ carte.numero_carte }}</td>
+                        <td>{{ carte.date_expiration }}</td>
+                        <td>{{ carte.cvv }}</td>
+                        <td>{{ carte.type_carte }}</td>
+                        <td>
+                            <a href="/cartes/update/{{ carte.id }}" class="btn btn-warning btn-sm">Modifier</a>
+                            <a href="/cartes/delete/{{ carte.id }}" class="btn btn-danger btn-sm">Supprimer</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+            {% endblock %}
+        </div>
+    </div>
+</div>
